@@ -2,7 +2,7 @@
 
 $dados = ['nome' => 'João', 'sobrenome' => 'Caldeira', 'idade' => 33, 'maior' => true, 'cores' => ["Preto","Azul","Vermelho"]];
 
-$dados['estiloMusical'] = 'Panque';
+$dados['estiloMusical'] = 'Rock';
 
 var_dump($dados);
 

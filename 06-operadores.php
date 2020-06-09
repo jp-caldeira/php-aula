@@ -33,7 +33,7 @@ echo $potencia;
 
 //string concatenacao
 
-$nome = 'Joãozin';
+$nome = 'João';
 $sobrenome = 'Caldeira';
 
 $nomeCompleto = "Meu nome é:".$nome." ".$sobrenome;
@@ -48,7 +48,7 @@ echo $nomeCompleto;
 
 //echo $resultado3;
 
-$name = "abobra";
+$name = "abobora";
 $cor = "verde";
 
 $tudoJunto = $name." ".$cor;

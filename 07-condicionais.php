@@ -14,7 +14,7 @@
     $idade = 25;
 
  if ($idade < 16) {
-   echo " Não pode votar<br> ";
+   echo "Não pode votar<br>";
  } elseif ($idade == 16 && $idade == 17){   //não deu certo
    echo " Voto opcional<br> ";
  } elseif ($idade >= 18) {
@@ -29,7 +29,7 @@
   $maior = $num1 > $num2 ? $num1 : $num2;
 
   echo "$maior<br>";
-  
+
   //switch
 
  $numero = 3;
@@ -45,18 +45,5 @@
     break;
   }
 
-$cazzo = 23;
-
-switch ($cazzo) {
-    case 45:
-    echo "---o número é tucaninho<br>";
-    break;
-    case 17:
-    echo " pelo amor escolhe outro número<br>";
-    break;
-    default:
-    echo " errou o número, tente de novo<br>";
-    break;
-}
 
  ?>
