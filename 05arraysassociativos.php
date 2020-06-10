@@ -6,7 +6,7 @@ $dados['estiloMusical'] = 'Rock';
 
 var_dump($dados);
 
-//echo $dados['nome'];
+echo $dados['nome'];
 
 //echo $dados['idade'];
 

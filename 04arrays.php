@@ -11,7 +11,9 @@ $lista[5] = 'Macarrão';
 
 //exibindo para o usuário:
 
-echo $lista[6];
+var_dump($lista);
+
+echo $lista[7];
 
 
 
