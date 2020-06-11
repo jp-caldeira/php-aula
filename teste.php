@@ -24,7 +24,7 @@ if ($idade >= 18){
   <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device width, initial-scale=1.0'>
-    <title>PHP</title>
+    <title>Aula PHP - 10 de junho de 2020</title>
   </head>
     <body>
       <h1>Olá, <?php echo $nome; ?></h1>
