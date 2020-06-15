@@ -6,6 +6,9 @@ body {
 header {
   text-align: center;
   color: orange;
+  background-color: grey;
+  border: 1px solid red;
+  
 }
 
 footer {
