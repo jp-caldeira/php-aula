@@ -1,6 +1,7 @@
 body {
-  font-family: sans-serif;
-
+  font-family: -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell","Fira Sans", "Droid Sans",
+  "Helvetica Neue", sans-serif;
+  background-color: #f7f7f7;
 }
 
 header {
@@ -8,12 +9,55 @@ header {
   color: orange;
   background-color: grey;
   border: 1px solid red;
-  
+
 }
 
 footer {
   text-align: center;
   color: green;
 
+}
 
+a.navbar-brand.brand-1 {
+  font-weight: 600;
+  font-size: 1.4rem;
+
+}
+
+.navbar-container {
+  padding-left: 0px;
+  margin-left: 70px;
+
+}
+
+.conteudo-site {
+  margin: 4rem;
+  background-color: #ffffff;
+}
+
+.titulo-principal {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+
+}
+
+.titulo-secondary{
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.legenda-secondary {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.figure {
+ margin-top: 2rem;
+ margin-bottom: 2rem;
+
+}
+
+.destaques-secundarios{
+  margin-top: 3rem;
 }

@@ -81,6 +81,8 @@ $podium = [
 Utilizando HTML com ajuda do PHP, crie uma lista de emails, parecida com uma caixa de email que exiba demonstre esses dados.
 	Para poder criar esse conteúdo você pode usar tanto as tags ul/li quanto a table/tr/td
 
+<?php
+
 $data = array(
 	array("de"=>"eu.placerat.eget@Vivamusmolestie.edu","assunto"=>"bibendum sed,","data"=>"2021-03-02 10:58:50","content"=>"ac orci. Ut semper pretium neque."),
 	array("de"=>"massa.Quisque.porttitor@uterosnon.net","assunto"=>"enim, condimentum eget,","data"=>"2020-10-02 14:58:44","content"=>"penatibus et magnis dis parturient montes,"),
@@ -112,7 +114,25 @@ $data = array(
 	array("de"=>"luctus.lobortis.Class@IntegerurnaVivamus.edu","assunto"=>"gravida sit","data"=>"2020-07-17 07:38:59","content"=>"Proin ultrices. Duis volutpat nunc sit"),
 	array("de"=>"risus.Duis@faucibuslectus.net","assunto"=>"mollis non,","data"=>"2020-11-15 22:07:54","content"=>"Integer in magna. Phasellus dolor elit,"),
 );
+ ?>
 
+<h2>Caixa de emails</h2>
+<table>
+  <tr>
+    <th>Remetente</th>
+    <th>Assunto</th>
+    <th>Data de Envio</th>
+    <th>Resumo da mensagem</th>
+  </tr>
+  <?php foreach($data as $email){
+    echo "<tr>
+    <td>$email[de]</td>
+    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$email[assunto]</td>
+    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$email[data]</td>".
+    "<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$email[content]</td>
+    </tr>";
+  }?>
+</table>
 
   </body>
 </html>
