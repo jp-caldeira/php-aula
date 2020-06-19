@@ -7,12 +7,14 @@
 </form>
 
 
+
 <?php
 
-var_dump($_POST);
+//var_dump($_POST);
+//var_dump($_REQUEST);
 
-if ($_POST['nome'] != ""){
-    echo "<br><br>Olá, $_POST[nome] $_POST[sobrenome], tudo bem com você?";
+if ($_POST['nome'] || $_POST['sobrenome'] != ""){
+    echo "<br><br>Olá, $_REQUEST[nome] $_POST[sobrenome], tudo bem com você?";
 }else{
     echo "<br><br>Bem-vindo, usuário desconhecido! Digite acima seus dados.";
 }
