@@ -24,6 +24,9 @@ function saludar()
   return "Hola Mundo";
 }
 
+saludar();// como está no return, ele não vai imprimir na tela
+
+echo "<br>";
 $espanhol = saludar();
 
 echo $espanhol;
@@ -31,12 +34,20 @@ echo $espanhol;
 
 
 function greet($nome, $sobrenome = " ") {
- echo "Olá, $nome $sobrenome";
+ echo "Olá, ".$nome." ".$sobrenome;
 
 }
-
+echo "<br>";
+echo "<br>";
 greet("Fulano","Silva");
-
+echo "<br>";
+echo "<br>";
+greet("João");
+echo "<br>";
+echo "<br>";
+greet("Amanda","Souza");
+echo "<br>";
+echo "<br>";
 ////////
 
 function whoIs(){
@@ -48,5 +59,3 @@ function whoIs(){
 $nome = whoIs();
 
 echo $nome;
-
- ?>
