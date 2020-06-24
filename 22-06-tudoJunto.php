@@ -42,4 +42,37 @@ vale $funcoesExecutadas em cada momento. Isso está permitido? O que acontece?</
 
 <p>7. Utilizando strpos(), encontrar a posição da primeira aparição de "php" dentro da cadeia: "Adoro php, Eu também adoro php!"</p>
 
-<?=strpos("Adoro php, Eu também adoro php!", "o");?>
+<?php
+$myString = "Adoro php, Eu também adoro php!";
+$findme = "php";
+$pos = strpos($myString, $findme);
+
+if ($pos === false){
+  echo "A string <strong>$findme</strong> não foi encontrada na string <em>$myString</em>.";
+} else {
+  echo "A string <strong>$findme</strong> foi encontrado na string <em>$myString</em> ";
+  echo "e está na posição <strong>$pos</strong>.";
+  }
+?>
+
+<p>8. Criar um processo executado a partir da linha de comando que:
+<ul>
+<li>Cumprimente o usuário dizendo “Olá, Mundo”.</li>
+<li>Peça para ele inserir o nome e depois diga “Boas-vindas, nome”, em que nome seja substituído pela informação inserida.</li>
+<li>Peça para o usuário inserir a idade. Se ele for menor de 18 anos, diremos “Você não está autorizado no sistema” e o programa terminará. Se ele for maior de 18 anos, diremos “Autorização aceita”.</br>
+<li>Criar uma função hobbyValido. Essa função recebe uma string e retorna verdadeiro caso essa string tenha menos de 15 caracteres e mais de 3 caracteres.</li>
+<li>Pediremos para o usuário inserir os hobbies <strong>separados por vírgula</strong>.</li>
+<li>Para cada hobby válido, dizer “Você confirma que gosta de HOBBY?” (a palavra HOBBY será substituída por cada valor inserido).</li>
+<li>Ao final, imprimir:</li>
+
+<ul>
+  <li>Nome: João</li>
+  <li>Idade: 25</li>
+  <li>Hobbies: Futebol, Netflix, Sorvete</li>
+</ul>
+</ul>
+
+<p>Só devem ser impressos os hobbies confirmados.</p>
+<p>Dica: Utilizar a função explode</p>
+
+</p>
