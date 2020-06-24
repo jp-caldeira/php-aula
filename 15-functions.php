@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 function hello () {
 
@@ -59,3 +59,35 @@ function whoIs(){
 $nome = whoIs();
 
 echo $nome;
+
+echo "<br><br>";
+
+function maior($numA, $numB, $numC){
+    if ($numA > $numB && $numA > $numB){
+        return $numA;
+    } else if ($numB > $numA && $numB > $numC){
+        return $numB;
+    } else if ($numC > $numA && $numC > $numB){
+      return $numC;
+    } else {
+      echo "deu ruim";
+    }
+}
+
+
+$numeroMagico = 77;
+
+function maiorMagico($numA, $numB, $numC = null){
+    global $numeroMagico;
+
+    if ($numC === null){
+      $numC = $numeroMagico;
+    }
+
+   return maior($numA, $numB, $numC);
+
+}
+
+echo maiorMagico(10, 520);
+
+?>

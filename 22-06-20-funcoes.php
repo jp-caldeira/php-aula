@@ -6,6 +6,9 @@ echo "<h1>Exercício Funcões:</h1>";
 echo "<p>a. Definir uma função <strong>maior()</strong> que receba 3 números e retorne o maior deles.</p>";
 
 function maior($numA, $numB, $numC){
+  global $funcoesExecutadas;
+  $funcoesExecutadas++;
+
     if ($numA > $numB && $numA > $numB){
         return $numA;
     } else if ($numB > $numA && $numB > $numC){
@@ -24,6 +27,9 @@ echo $emaior;
 echo "<p>b. Definir uma função <strong>tabela()</strong> que receba um parâmetro base, um parâmetro limite e retorne um <strong>array</strong> com a sequência de números a partir do número base até o número limite.</p>";
 
 function tabela ($numeroBase, $numeroLimite){
+  global $funcoesExecutadas;
+  $funcoesExecutadas++;
+
   $array = [];
   for ($numeroBase; $numeroBase <= $numeroLimite; $numeroBase++){
     $array[] = $numeroBase;
@@ -39,6 +45,9 @@ echo "<p>d. Modificar <strong>maior()</strong> de forma que, se receber apenas 2
 
 function maiorMagico($numA, $numB, $numC = null){
     global $numeroMagico;
+    global $funcoesExecutadas;
+    $funcoesExecutadas++;
+
 
     if ($numC === null){
       $numC = $numeroMagico;
@@ -60,7 +69,8 @@ echo maiorMagico(10, 40);
 echo "<p>e. Modificar tabela de forma que, se ela receber apenas um parâmetro, a função use numeroMagico como limite.</p>";
 
 function tabelaMagica ($numeroBase, $numeroLimite = null){
-
+    global $funcoesExecutadas;
+    $funcoesExecutadas++;
     global $numeroMagico;
 
   if ($numeroLimite === null) $numeroLimite = $numeroMagico;
