@@ -22,9 +22,10 @@ function hobbyValido($string){
 
 ?>
 
-<form class="" action="exercicio8c.php" method="post">
+<form class="" action="exercicio8b.php" method="post">
   <label for="hobbies">Digite seus hobbies abaixo, separados por vírgula:</label><br>
       <input type="text" name="hobbies" value="" placeholder="digite seus hobbies aqui..."><br>
       <input type="submit" name="" value="Enviar">
 </form>
+
 <?php var_dump($_POST);?>

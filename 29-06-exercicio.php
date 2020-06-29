@@ -50,21 +50,24 @@ $foto = 'img/'.$_FILES['arquivo']['name'];
 
 $senhacripto = password_hash($senha, PASSWORD_DEFAULT);
 
-$arrayzinho = [$nome, $email, $senhacripto, $foto];
+$arrayzinho = ["nome" => $nome, "email" => $email, "senha" => $senhacripto, "foto" => $foto];//criando um array associativo
 
+echo "<br><br>";
+var_dump($arrayzinho);
+echo"<br>";
 $arrazy2 = json_encode($arrayzinho);
 
 file_put_contents('aula26.json', $arrazy2);
 
-$arrayzinho = file_get_contents('aula26.json', true);
+$arrayzinho = file_get_contents('aula26.json');
 
-$arrayzinho3 = json_decode($arrayzinho);
+$arrayzinho3 = json_decode($arrayzinho, true);//transforma a string do json em um array
 
 echo "<br><br>";
 
 var_dump($arrayzinho3);
 
-$variavel = password_verify($arrayzinho3[2], $senhacripto);
+$variavel = password_verify($arrayzinho3["senha"], $senhacripto);
 
 var_dump($variavel);
 

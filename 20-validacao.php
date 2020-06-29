@@ -1,4 +1,10 @@
 <?php
+if ($_POST == null) {
+$_POST['nomeCompleto'] = " ";
+$_POST['usuario'] = " ";
+$_POST['senha'] = " ";
+$_POST['email'] = " ";
+}
 
 if ($_POST !== null) {
             if (strlen($_POST['nomeCompleto']) == 0) {

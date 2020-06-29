@@ -1,6 +1,6 @@
 <?php
 
-//var_dump($_FILES);
+var_dump($_FILES);
 
 $extensoesValidas = ["image/jpeg", "image/jpg", "image/png"];
 //validando arquivos
@@ -10,7 +10,7 @@ if ($_FILES['imagem']['error'] === UPLOAD_ERR_OK){
         exit;
     }
 //salvando arquivos
-if (move_uploaded_file($_FILES['imagem']['tmp_name'], 'img/'.$_FILES['imagem']['name'])) {
+if (move_uploaded_file($_FILES['imagem']['tmp_name'],'img/'.$_FILES['imagem']['name'])) {
     echo "Arquivo salvo com sucesso<br><br>";
 } else {
     echo "Erro na hora de salvar seu arquivo<br><br>";
@@ -36,5 +36,12 @@ echo "A extensão do arquivo é: ".pathinfo($nome, PATHINFO_EXTENSION);
 
 echo "<br><br>";
 echo dirname(__FILE__);
+
+echo "<br><br>";
+
+
+
+
+
 
 ?>

@@ -2,11 +2,11 @@
 
 //var_dump($_GET);
 
-if ($_GET != null) {
-$nome = $_GET['nome'];
-$sobrenome = $_GET['sobrenome'];
-$idade = $_GET['idade'];
-$profissao = $_GET['profissao'];
+if ($_POST != null) {
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$idade = $_POST['idade'];
+$profissao = $_POST['profissao'];
 } else {
   $nome = " ";
   $sobrenome = " ";
@@ -23,10 +23,10 @@ $array_profissoes = ["Professor", "Programador", "Analista"];
 <br>
 <br>
 
- <form class=""  action="19-persistencia.php" method="GET">
-    <input type="text" name="nome" value="<?=$nome?>"> <!--sintaxe curta -->
-    <input type="text" name="sobrenome" value="<?php echo $sobrenome?>">
-    <input type="number" name="idade" value="<?=$idade?>">
+ <form class=""  action="19-persistencia.php" method="POST">
+    <input type="text" name="nome" value="<?=$nome?>" placeholder="digite seu nome"> <!--sintaxe curta -->
+    <input type="text" name="sobrenome" value="<?php echo $sobrenome?>" placeholder="digite seu sobrenome">
+    <input type="number" name="idade" value="<?=$idade?>" placeholder="digite sua idade">
 
 
 <select name="profissao">
