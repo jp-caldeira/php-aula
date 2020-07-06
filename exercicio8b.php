@@ -1,6 +1,13 @@
 <?php
 
 $idade = $_POST['idade'];
+$nome = $_COOKIE['nome'];
+
+$infos = ["nome" => $nome, "idade" => $idade];
+
+$infosencode = json_encode($infos);
+
+file_put_contents('infos.json', $infosencode);
 
 session_start();
 
