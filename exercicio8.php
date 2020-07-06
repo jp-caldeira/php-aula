@@ -12,7 +12,7 @@ if($_POST == null){
   <?php
     echo "Boas vindas, ".$_POST['nome'];?>
     <p>Digite sua idade:</p>
-    <form action="exercicio8.php" method="GET">
+    <form action="exercicio8a.php" method="GET">
       <input type="number" name="idade" value="">
       <input type="submit" name="" value="Enviar">
     </form>
@@ -29,5 +29,10 @@ if($_POST == null){
         echo "Autorização aceita!<br><br>";
       }
     }
+
+
+
+
+
 
     ?>

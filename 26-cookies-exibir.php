@@ -1,7 +1,12 @@
 <?php
 
+if (isset($_COOKIE['idioma'])){
 var_dump($_COOKIE['idioma']);
+}
 
+if(isset($_COOKIE['sobrenome'])){
+echo "<br><br>O sobrenome do usuário é: ".$_COOKIE['sobrenome'];
+}
 session_start();
 
 echo "<br>";

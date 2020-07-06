@@ -1,5 +1,12 @@
 <?php
 
+$idade = $_POST['idade'];
+
+session_start();
+
+$_SESSION['usuar'] = ['nome' => $_COOKIE['nome'], 'idade' => $idade];
+
+echo "Olá, ".$_COOKIE['nome'];
 
 if($_POST['idade'] == null){
     echo "Você precisa digitar sua idade!<br><br>Clique em voltar e digite sua idade para continuar";
@@ -22,10 +29,8 @@ function hobbyValido($string){
 
 ?>
 
-<form class="" action="exercicio8b.php" method="post">
+<form class="" action="exercicio8c.php" method="post">
   <label for="hobbies">Digite seus hobbies abaixo, separados por vírgula:</label><br>
       <input type="text" name="hobbies" value="" placeholder="digite seus hobbies aqui..."><br>
       <input type="submit" name="" value="Enviar">
 </form>
-
-<?php var_dump($_POST);?>
