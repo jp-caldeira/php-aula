@@ -4,7 +4,7 @@ include 'PDO-01-index.php';
 
 echo "<br><br>";
 
-$query = $db->prepare("SELECT * FROM ator");
+$query = $db->prepare("SELECT * FROM atores");
 
 $query->execute();
 
@@ -15,9 +15,9 @@ var_dump($result);
 echo "<br><br><h3>Tabela atores</h3>";
 
 foreach ($result as $key => $value){
-  echo "<br>Nome: ".$value['primeiro_nome']."<br>";
-  echo "Sobrenome: ".$value['ultimo_nome']."<br>";
-  echo "ID: ".$value['ator_id']."<br>";
+  echo "<br>Nome: ".$value['nome']." ".$value['sobrenome']."<br>";
+  echo "ID: ".$value['id']."<br>";
+
 
 }
  ?>

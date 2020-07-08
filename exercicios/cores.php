@@ -3,7 +3,10 @@ session_start();
 var_dump($_POST);
 
 if($_POST){
-    $_SESSION['cor'] = $_POST['cor'];}   ?>
+    $_SESSION['cor']= $_POST['cor'];
+      }
+
+ ?>
 
 
 
