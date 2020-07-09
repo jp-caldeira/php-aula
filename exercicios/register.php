@@ -18,8 +18,8 @@
   <body>
       <h2>Faça seu cadastro!</h2>
       <form class="" action="login.php" method="post">
-        <input type="text" name="Nome" value="">Digite seu nome</input><br>
-        <input type='email' name='Email' value=''>Insira seu email</input><br>
+        <input type="text" name="nome" value="">Digite seu nome</input><br>
+        <input type='email' name='email' value=''>Insira seu email</input><br>
         <input type="password" name="senha" value="senha">Digite uma senha</input><br>
         <br>
         <button type="submit" name="button">Enviar</button>
