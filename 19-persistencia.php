@@ -1,8 +1,8 @@
 <?php
 
-//var_dump($_GET);
+var_dump($_POST);
 
-if ($_POST != null) {
+if ($_POST) {  //ou $_post != null
 $nome = $_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
 $idade = $_POST['idade'];
@@ -15,7 +15,7 @@ $profissao = $_POST['profissao'];
 
 }
 
-$array_profissoes = ["Professor", "Programador", "Analista"];
+$array_profissoes = ["Professor", "Programador", "Analista", "Jogador de Truco", "Contador", "Engenheiro", "Médico", "Farmacêutico","Historiador", "Escritor", "Empreendedor","Livreiro", "Manicure", "Vendedor", "Operador", "Administrador", "Soldador", "Bombeiro", "Entregador"];
 
  ?>
 
@@ -29,6 +29,7 @@ $array_profissoes = ["Professor", "Programador", "Analista"];
     <input type="number" name="idade" value="<?=$idade?>" placeholder="digite sua idade">
 
 
+
 <select name="profissao">
     <option default value="Escolha uma profissão">
       Escolha uma profissão
@@ -37,11 +38,10 @@ $array_profissoes = ["Professor", "Programador", "Analista"];
 <?php foreach($array_profissoes as $valor):?>
   <?php if($profissao == $valor){ ?>
   <option selected value="<?=$valor?>"><?=$valor?></option>
-    <?php }else{ ?>
+<?php }else{ ?>
         <option value="<?=$valor?>"><?=$valor?></option>
-      <?php } endforeach ?>
+      <?php } endforeach; ?>
 
 </select>
   <button type="submit" name="button"> Enviar </button>
-
  </form>

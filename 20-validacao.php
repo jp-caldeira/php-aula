@@ -1,4 +1,7 @@
 <?php
+
+var_dump($_POST);
+
 if ($_POST == null) {
 $_POST['nomeCompleto'] = " ";
 $_POST['usuario'] = " ";
@@ -6,13 +9,18 @@ $_POST['senha'] = " ";
 $_POST['email'] = " ";
 }
 
+
+
 if ($_POST !== null) {
-            if (strlen($_POST['nomeCompleto']) == 0) {
-                echo "Nome não pode ser vazio. Digite seu nome.<br>";
+    $nometrim = trim($_POST['nomeCompleto']);
+    $userName = trim($_POST['usuario']);
+            if (strlen($nometrim) == 0) {
+                echo "<br>Nome não pode ser vazio. Digite seu nome.<br>";
           }
-            if (strlen($_POST['usuario']) < 8) {
+            if (strlen($userName) < 8) {
               echo "Seu nome de usuário deve ter ao menos OITO caracteres!<br>";
           }
+
 
           if (is_numeric($_POST['senha']) == false) {
               echo "Campo senha deve ter apenas números!<br>";

@@ -6,35 +6,30 @@
 //ii. atribuir ao usuário um id único, com númeração automática, usando como referência o último id inserido
 //no arquivo
 
-if(!isset($_POST['nome']) || $_POST['nome'] === ""){
-  echo "<br>Insira seu nome para continuar<br>";  
-  } else {
-    $newName = $_POST['nome'];
-  }
-
-if (!isset($_POST['email'])){
-  echo "<br>Insira seu email para continuar<br>";
-} else {
-  $newEmail = $_POST['email'];
-}
-
-if (!isset($_POST['senha'])){
-  echo "<br>Digite uma senha para se registrar<br>";
-} else {
-$senhaC = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-}
+  if($_POST){
+    $newName = trim($_POST['nome']);
+    $newEmail = trim($_POST['email']);
+    $senha = trim($_POST['senha']);
+            if (strlen($newName) < 2){
+            echo "<br>ERRO: Você precisa digitar seu <strong>nome</strong> para se registrar<br>";
+            }
+            if (filter_var($newEmail, FILTER_VALIDATE_EMAIL) == false) {
+            echo "<br>ERRO:Você deve inserir um <strong>email válido</strong> para continuar<br>";
+          }
+          if (strlen($senha) < 6){
+            echo "<br>ERRO: O campo <strong>SENHA</strong> deve ter ao menos SEIS caracteres.<br>";
+          } else {
+            $senhaC = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+          }
+    } else {
+      echo "<br>Insira suas informações<br>";
+    }
 
 
  $arraydecode = file_get_contents('rgst.json');
- // echo "var dump depois do get contents:";
- // var_dump($arraydecode);
- // echo "<br><br>";
 
  $arrayUsers = json_decode($arraydecode, true);
- // echo "var dump depois do json_decode:";
- // var_dump($arrayUsers);
- // echo  "<br>";
-
+ 
 if (!isset($arrayUsers)){
     $id = 1;
   } else {
@@ -52,7 +47,7 @@ if (isset($arrayUsers)){
 //coloca outro isset, depois um if dentro do if que vai avaliar se o newEmail está dentro do array Emails e aí sim
 //vai adicionar o valor;
 
-  if(isset($newEmail)){
+  if(isset($newEmail) && isset($senhaC)){
     if (in_array($newEmail, $arrayEmails)){
       echo "<br>E-mail já existe<br>";
     } else {
@@ -63,7 +58,7 @@ if (isset($arrayUsers)){
   }
 }
 //b.em login, verificar a existência dos dados inseridos
-//i.verificar a existência do e-mail, se a senha está correta 
+//i.verificar a existência do e-mail, se a senha está correta
  ?>
 
  <!DOCTYPE html>
@@ -84,6 +79,6 @@ if (isset($arrayUsers)){
     <br>
     <input type="submit" name="Fazer login">
   </form>
-   
+
  </body>
  </html>
