@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+
+
+}
+
+body,
+html {
+    font-family: 'Quicksand', sans-serif;
+
+
+}
+
+.first-section {
+    max-width: 80%;
+    margin: auto;
+    padding: 3rem;
+    background: lightgray;
+    text-align: center;
+}
+
+.login-form {
+  max-width: 25%;
+  margin: 10px auto;
+  background: rgba(0, 128, 0, 0.7);
+  box-sizing: border-box;
+  padding: auto;
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  }
+
+.box{
+  width: 33.33%;
+  background-color: lightgray;
+  display:block;
+  float: left;
+  border: solid 8px white;
+  margin-top: 5px;
+  text-align: center;
+}
+
+ul {
+  list-style:none;
+  background-color: gray;
+  overflow:hidden;
+}
+
+li {
+  float:left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; 
+}
