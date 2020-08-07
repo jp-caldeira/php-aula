@@ -41,6 +41,11 @@ class Produto {
   class Carrinho {
 
     public $items;
+    public $precoTotal;
+
+    function exibeTotal(){
+      echo $this->precoTotal;
+    }
 
     function addItem(Produto $produto){
       $this->items[] = $produto;
@@ -55,14 +60,36 @@ class Produto {
         echo "Seu carrinho está vazio!<br>";
         } else {
        foreach($this->items as $item){
-        var_dump($item). '/n';
-      }
+        echo "Nome do produto: ";
+        $item->mostrarNome();
+        echo "<br>";
+        echo "Preço do produto: ";
+        $item->mostrarPreco();
+        echo "<br>";
+        var_dump($item);
+        echo "<br><br>";
+        }
     }
   }
 
     function limpaItems(){
       $this->items = [];
       }
+//tentando somar o valor do carrinho
+function valorTotal(){
+    $this->precoTotal = 0;
+    if(!empty($this->items)){
+      foreach($this->items as $item){
+        $valorTotal = $this->precoTotal;
+        $preco = $item->preco;
+        $valorTotal = $valorTotal + $preco;
+        $this->precoTotal = $valorTotal;
+        }
+        return $this->precoTotal;
+    } else {
+      echo "Carrinho está vazio<br>";
+    }
+}
 
 }
 
