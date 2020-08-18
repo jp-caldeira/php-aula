@@ -1,0 +1,3 @@
+*.sql
+/img
+PDO/connect.php

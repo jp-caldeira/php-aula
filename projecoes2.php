@@ -46,14 +46,20 @@ $percentual = percentualSemana($casosSemana1, $diferencaSemana);
 echo "<br>A diferença percentual entre as duas semanas foi de ".$percentual."<br>";
 
 $projecao = $casosSemana2;
+$total = $casosSemana2 + $casosSemana1;
 
 for($i=1; $i <= 20; $i++){
   $projecao = $projecao + ($projecao * $percentual);
   $projround = round($projecao);
+  $total = $total + $projround;
   $projmedia = round($projround / 7);
   echo "<br>Projeção para semana ".$i.": ".$projround." novos casos.";
   echo "<br>Média de ".$projmedia." novos casos por dia.<br>";
+  echo "Total: ".$total."<br>";
+
 }
+
+
 
 
 ?>

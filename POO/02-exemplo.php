@@ -26,7 +26,7 @@ $carrinho->addItem($moto);
 echo "<br><br>Exibir items após adicionar no carrinho:<br><br>";
 $carrinho->exibeItems();
 $carrinho->valorTotal();
-$carrinho->exibeTotal()
+$carrinho->exibeTotal();
 $carrinho->limpaItems();
 echo "<br><br>Exibir items após limpar carrinho:<br><br>";
 $carrinho->exibeItems();
