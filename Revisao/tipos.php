@@ -25,3 +25,4 @@ $nome = 30000;
 echo "<br>A variável nome agora é do tipo: ";
 echo gettype($nome);
 
+
