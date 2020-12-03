@@ -20,5 +20,8 @@ echo $dados['nome'];
 
 //echo $dados['estiloMusical'];
 
+$produtos = [
+["nome"=> "Mouse sem fio", "preco" => 30],
 
+];
  ?>
