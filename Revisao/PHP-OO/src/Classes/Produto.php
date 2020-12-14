@@ -2,18 +2,18 @@
 
 class Produto
 {
-    public $titulo;
+    public string $titulo;
 
-    public $descricao = "Cerveja lata 350 ml";//definindo um valor padrão para a propriedade
+    public string $descricao = "Cerveja lata 350 ml";//definindo um valor padrão para a propriedade
 
-    public $preco;
+    public float $preco;
 
-    public function defineCodigoBarras($codigo)
+    public function defineCodigoBarras(string $codigo) : void
     {
         $this->codigoBarras = $codigo;
     }
 
-    public function getCodigo()
+    public function getCodigo() : void
     {
         echo $this->codigoBarras;
     }

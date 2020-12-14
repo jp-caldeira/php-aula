@@ -2,17 +2,17 @@
 
 class Fornecedor
 {
-    public $nomeFantasia;
+    public string $nomeFantasia;
 
-    public $cnpj;
+    public string $cnpj;
 
-    public $razaoSocial;
+    public string $razaoSocial;
 
     public const PAIS = "Brasil";
 
     public const NORMA = "1050";
 
-    public function autorizar($usuario)
+    public function autorizar(object $usuario) : void
     {
       if($usuario->nome == "Joao" && $usuario->senha == "123456"){
           echo "<br>Usuário Autorizado";
@@ -20,5 +20,5 @@ class Fornecedor
           echo "<br>Acesso negado";
       }
     }
-    
+
 }
