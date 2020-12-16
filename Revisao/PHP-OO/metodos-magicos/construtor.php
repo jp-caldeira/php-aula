@@ -12,14 +12,14 @@ $cliente->alterar("Joao", 32);
 
 $cliente(true);
 
-$clienteSerializado = serialize($cliente);
+$cliSerializado = serialize($cliente);
 
-echo "<br>" . $clienteSerializado;
+$cliente2 = unserialize($cliSerializado);
 
-$cliente2 = unserialize($clienteSerializado);
-
+echo "<br><br>" . $cliSerializado . "<br><br>" ;
+echo "método to string: " . $cliente;
 
 //unset($cliente); dá erro no var_dump --> unset elimina a variável
 //exit; termina a execução --> não exibe o var_dump, mas não dá erro.
 
-var_dump($cliente, $cliente2);
+var_dump($cliente, $cliente2, $cliSerializado);

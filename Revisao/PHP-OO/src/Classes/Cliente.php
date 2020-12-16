@@ -19,7 +19,7 @@ class Cliente
         $this->idade = $idade;
     }
 
-    public function __set(string $nomePropriedade, $valorPropriedade)
+    public function __set(string $nomePropriedade, $valorPropriedade): void
     {
         if($nomePropriedade === 'cpf'){
           $this->cpf = str_replace(".", "", $valorPropriedade);
@@ -28,12 +28,12 @@ class Cliente
         }
     }
 
-    public function __get(string $nomePropriedade)
+    public function __get(string $nomePropriedade): string
     {
         return "A propriedade não existe";
     }
 
-    public function __call(string $nomeMetodo, array $argumentosMetodo)
+    public function __call(string $nomeMetodo, array $argumentosMetodo): void
     {
         if ($nomeMetodo === "alterar"){
            $this->nome = $argumentosMetodo[0];
@@ -41,9 +41,24 @@ class Cliente
         }
     }
 
-    public function __invoke(bool $status)
+    public function __invoke(bool $status): void
     {
         $this->status = $status;
+    }
+
+    public function __sleep(): array
+    {
+        return ["nome", "idade"];
+    }
+
+    public function __wakeup(): void
+    {
+        $this->tipo = "serializado";
+    }
+
+    public function __tostring(): string
+    {
+        return $this->nome . ", " . $this->idade;
     }
 
     public function comprar(): void
