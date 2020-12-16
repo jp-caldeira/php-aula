@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Classes;
+
 class Fornecedor
 {
     public string $nomeFantasia;

@@ -2,8 +2,10 @@
 
 namespace App\Email;
 
+use App\Classes\Cliente;
 use App\Email\Adaptadores\Mailgun\Adaptador as Mailgun;
 use App\Email\Adaptadores\SES\Adaptador as SES;
+
 
 const VERSAO = 1.0;
 
@@ -17,7 +19,7 @@ class Envio {
 
       $obj = new \stdClass;
 
-      $cliente = new \Cliente;
+      $cliente = new Cliente;
 
       var_dump($adaptador, $obj, $transporte, $cliente);
     }
