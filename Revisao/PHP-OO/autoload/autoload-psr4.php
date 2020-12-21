@@ -19,7 +19,7 @@ function carregar(string $nomeCompleto)
 
     $caminhoArquivo = $diretorioBase . str_replace("\\", "/", $caminhoRelativo) . ".php";
 
-    //var_dump($caminhoRelativo, $caminhoArquivo, $nomeCompleto);
+    //var_dump($nomeCompleto, $nsRaizRecebido, $caminhoRelativo, $caminhoArquivo);
 
     if (file_exists($caminhoArquivo)){
         require $caminhoArquivo;

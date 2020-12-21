@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class Fornecedor
+final class Fornecedor
 {
     public string $nomeFantasia;
 
