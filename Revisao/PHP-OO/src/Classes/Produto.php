@@ -4,11 +4,11 @@ namespace App\Classes;
 
 class Produto
 {
-    public string $titulo;
+    private string $titulo;
 
     public string $descricao = "Produtos em geral";//definindo um valor padrão para a propriedade
 
-    public float $preco;
+    protected float $preco;
 
     public function __construct(string $titulo)
     {
@@ -21,13 +21,21 @@ class Produto
         $this->codigoBarras = $codigo;
     }
 
-    public function getCodigo() : void
+    private function getCodigo() : void
     {
-        echo $this->codigoBarras;
+        echo "<br>Código de barras do produto: " . $this->codigoBarras;
+    }
+
+    public function definePreco(float $preco): void
+    {
+        $this->preco = $preco;
     }
 
     public function detalhes():void
     {
         echo "<br>Nome do produto: " . $this->titulo."<br>";
+        echo "<br>Preço: " . $this->preco."<br>";
+        echo "<br>Descrição: " . $this->descricao."<br>";
+        $this->getCodigo();
     }
 }
