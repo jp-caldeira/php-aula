@@ -8,7 +8,9 @@ class Produto
 
     public string $descricao = "Produtos em geral";//definindo um valor padrão para a propriedade
 
-    protected float $preco;
+    private float $preco;
+
+    private string $codigoBarras;
 
     public function __construct(string $titulo)
     {
@@ -28,7 +30,9 @@ class Produto
 
     public function definePreco(float $preco): void
     {
-        $this->preco = $preco;
+        if($preco > 0){
+            $this->preco = $preco;
+        }        
     }
 
     public function detalhes():void
