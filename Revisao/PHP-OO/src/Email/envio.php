@@ -5,23 +5,19 @@ namespace App\Email;
 use App\Classes\Cliente;
 use App\Email\Adaptadores\Mailgun\Adaptador as Mailgun;
 use App\Email\Adaptadores\SES\Adaptador as SES;
+use App\Email\Adaptadores\AdaptadorInterface;
+
 
 
 const VERSAO = 1.0;
 
 class Envio {
 
-    public function enviar(): void
+    public function enviar(AdaptadorInterface $adaptador): void
     {
-      $adaptador = new Mailgun;
+        $adaptador->processar();
 
-      $transporte = new Transporte;//estão no mesmo namespace, então não precisa colocar o caminho
-
-      $obj = new \stdClass;
-
-      $cliente = new Cliente;
-
-      var_dump($adaptador, $obj, $transporte, $cliente);
+        $transporte = new Transporte;//estão no mesmo namespace, então não precisa colocar o caminho
     }
 
     public function m1()
