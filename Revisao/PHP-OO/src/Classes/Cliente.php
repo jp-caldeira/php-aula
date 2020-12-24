@@ -2,21 +2,12 @@
 
 namespace App\Classes;
 
-class Cliente
+class Cliente extends Pessoa
 {
-    public string $nome;
 
-    public int $idade;
-
-    public string $endereco;
-
-    public string $telefone;
-
-    public function __construct(string $nome, string $telefone, int $idade)
+    public function setId(int $id): void
     {
-        $this->nome = $nome;
-        $this->telefone = $telefone;
-        $this->idade = $idade;
+        $this->id = $id + 1000;
     }
 
     public function __set(string $nomePropriedade, $valorPropriedade): void
@@ -71,11 +62,11 @@ class Cliente
         $this->nome = $nome;
     }
 
-    public function __destruct()
-    {
-       echo "O objeto foi destruído<br>";
-       echo "O método destrutor é bem menos utilizado que o construtor.";
-    }
+    // public function __destruct()
+    // {
+    //    echo "O objeto foi destruído<br>";
+    //    echo "O método destrutor é bem menos utilizado que o construtor.";
+    // }
 
 
 }
