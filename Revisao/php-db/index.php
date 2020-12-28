@@ -2,49 +2,38 @@
 
 require_once "connect.php";
 
-$host = "Localhost";
-$user = "root";
-$dbname = "teste_db";
+//$conexao = new PDO('mysql:host=localhost;dbname=teste_db', $user, $pass);
 
-//conectando com o construtor do mysqli
-$conexao  = new mysqli($host, $user, $pass, $dbname);
 
-//var_dump($conexao);
 
-//$sql = "CREATE TABLE alunos (id INT PRIMARY KEY, nome VARCHAR(100))";
+//tratando erros - classes PDOException
 
-//$sql = "INSERT INTO alunos (id, nome) VALUES (1, 'João')";
+try {
 
-$sql = "SELECT * FROM ALUNOS";
+      $conexao = new PDO('mysql:host=localhost;dbname=teste_db', $user, $pass);
 
-$resultado = $conexao->query($sql);
-$resultado2 = $conexao->query($sql);
-$resultado3 = $conexao->query($sql);
-$resultado4 = $conexao->query($sql);
+      //$resultado = $conexao->query("INSERT INTO alunos (id, nome) values (4, 'Fulano')");
 
-//var_dump($resultado->fetch_assoc());
+      $resultado = $conexao->query("SELECT * FROM alunos");
 
-// while ($linha = $resultado->fetch_assoc()){
-//     var_dump($linha);
-// }
-//
-// while ($linha = $resultado2->fetch_row()){
-//     var_dump($linha);
-// }
-//
-// while ($linha = $resultado3->fetch_object()){
-//     var_dump($linha);
-// }
+      //$resultado->setFetchMode(PDO::FETCH_ASSOC);
+      if(!$resultado){
+        $erro = $conexao->errorInfo();
 
-//fetch all
-$linhas = $resultado->fetch_all(MYSQLI_ASSOC);
+        throw new \PDOException($erro[2], $erro[1]);
+      }
 
-var_dump($linhas);
 
-foreach($linhas as $linha) {
-  echo $linha['id'] . " " . $linha['nome'] . "<br>";
+      $alunos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+      var_dump($alunos);
+
+    foreach ($resultado as $aluno){
+      var_dump($aluno);
+    }
+
+
+} catch (\PDOException $e) {
+    echo "Mensagem: " . $e->getMessage();
+    echo "<br>Código: ". $e->getCode();
 }
-
-//conectando com a funcao connect -- procedural
-$conexao2 = mysqli_connect($host, $user, $pass, $dbname);
-//var_dump($conexao2);
