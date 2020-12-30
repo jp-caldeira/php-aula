@@ -3,7 +3,7 @@
 return [
     "driver" => "mysql",
     "servidor" => "localhost",
-    "dbname" => "teste_db",
+    "dbname" => "dbteste",
     "user" => "root",
     "pass" => ""
 ];

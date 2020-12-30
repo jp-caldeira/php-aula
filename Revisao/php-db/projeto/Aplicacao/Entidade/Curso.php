@@ -4,13 +4,13 @@ namespace App\Entidade;
 
 class Curso 
 {
-    private string $nome;
+    private $nome;
 
-    private string $versaoFerramenta;
+    private $versaoFerramenta;
 
-    private int $cargaHoraria;
+    private $cargaHoraria;
 
-    private bool $status;
+    private $status;
 
     public function setNome(string $nome): void
     {

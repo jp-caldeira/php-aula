@@ -9,6 +9,8 @@ require_once "connect.php";
 //tratando erros - classes PDOException
 
 try {
+      $user = "root";
+      $pass = "";
 
       $conexao = new PDO('mysql:host=localhost;dbname=teste_db', $user, $pass);
 

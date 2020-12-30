@@ -3,7 +3,7 @@
 function carregar(string $nomeCompleto)
 {
     $nsRaiz = "App\\";
-    $diretorioBase = __DIR__ . "/../aplicacao/";
+    $diretorioBase = __DIR__ . "/../Aplicacao/";
 
     $tamanhoNsRaiz = strlen($nsRaiz);
 

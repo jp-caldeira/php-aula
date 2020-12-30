@@ -11,8 +11,9 @@ $configDB = require 'config/banco-de-dados.php';
 
 $conexao = new Conexao($configDB);
 
-var_dump($conexao);
+$cursoRepositorio = new Curso($conexao);
 
-$cursoRepositorio = new Curso;
+$cursoRepositorio->todos();
 
-require_once "exibicao/principal.php";
+
+//require_once "exibicao/principal.php";

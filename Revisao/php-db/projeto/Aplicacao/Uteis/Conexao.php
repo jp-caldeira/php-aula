@@ -8,7 +8,7 @@ class Conexao extends \PDO
     {
         $dns = \vsprintf('%s:host=%s;dbname=%s', $dados);
 
-        // \var_dump($dns);
+        //\var_dump($dns);
 
         parent::__construct($dns, $dados['user'], $dados['pass']);
     }
