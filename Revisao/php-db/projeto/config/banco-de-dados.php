@@ -3,7 +3,9 @@
 return [
     "driver" => "mysql",
     "servidor" => "localhost",
-    "dbname" => "dbteste",
+    "dbname" => "teste_db",
     "user" => "root",
-    "pass" => ""
+    "pass" => "Larcme246467",
+    "modo-erro" => \PDO::ERRMODE_EXCEPTION,
+    "conexao-persistente" => true
 ];

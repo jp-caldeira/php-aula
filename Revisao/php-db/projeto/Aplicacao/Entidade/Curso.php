@@ -2,15 +2,27 @@
 
 namespace App\Entidade;
 
-class Curso 
+class Curso
 {
-    private $nome;
+    private string $nome;
 
-    private $versaoFerramenta;
+    private string $versaoFerramenta;
 
-    private $cargaHoraria;
+    private int $cargaHoraria;
 
-    private $status;
+    private bool $status;
+
+    public static function fromArray(array $dados)
+    {
+        $curso = new Curso;
+        $curso->nome = $dados["nome"];
+        $curso->versaoFerramenta = $dados["versao_ferramenta"];
+        $curso->cargaHoraria = $dados["carga_horaria"];
+        $curso->status = $dados["status"];
+
+        return $curso;
+
+    }
 
     public function setNome(string $nome): void
     {
@@ -50,5 +62,5 @@ class Curso
     public function getStatus(): bool
     {
         return $this->status;
-    }    
+    }
 }

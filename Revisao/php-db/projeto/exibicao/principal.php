@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($cursoRepositorio->todos() as $curso) : ?>
+                <?php foreach($cursos as $curso) : ?>
                     <?php if (!$curso->getStatus()) {
                         continue;
                     } ?>

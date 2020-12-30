@@ -5,15 +5,27 @@ require_once "autoload/autoload.php";
 use App\Repositorio\Curso;
 use App\Uteis\Conexao;
 
-$configDB = require 'config/banco-de-dados.php';
+
 
 //var_dump($configDB);
 
-$conexao = new Conexao($configDB);
+try {
 
-$cursoRepositorio = new Curso($conexao);
+    $configDB = require 'config/banco-de-dados.php';
 
-$cursoRepositorio->todos();
+    $conexao = new Conexao($configDB);
+
+    $cursoRepositorio = new Curso($conexao);
+    $cursos = $cursoRepositorio->todos();
+
+} catch (\PDOException $e) {
+    echo $e->getMessage();
+    exit;
+}
 
 
-//require_once "exibicao/principal.php";
+
+
+
+
+require_once "exibicao/principal.php";

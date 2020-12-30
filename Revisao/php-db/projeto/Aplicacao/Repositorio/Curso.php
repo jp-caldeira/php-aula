@@ -6,8 +6,16 @@ use App\Entidade\Curso as CursoEntidade;
 
 class Curso extends RepositorioBase
 {
-    public function todos() 
+    public function todos()
     {
-        var_dump($this->select('cursos'));
+        $cursosArray = $this->select('cursos');
+
+        $cursosObj = [];
+
+        foreach($cursosArray as $curso){
+            $cursosObj[] = CursoEntidade::fromArray($curso);
+        }
+
+        return $cursosObj;
     }
 }
